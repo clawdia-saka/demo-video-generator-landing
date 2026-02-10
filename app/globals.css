@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply antialiased;
+}
+
+.solana-glow {
+  box-shadow: 0 0 20px rgba(153, 69, 255, 0.3);
+}
+
+.solana-glow-green {
+  box-shadow: 0 0 20px rgba(20, 241, 149, 0.3);
+}
