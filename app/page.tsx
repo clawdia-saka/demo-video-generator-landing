@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 const SOLANA_RPC = 'https://api.mainnet-beta.solana.com'
 const API_ENDPOINT = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3004'
 const PAYMENT_RECIPIENT = process.env.NEXT_PUBLIC_PAYMENT_WALLET || '3q1MWFNmKp6i8hnnXEKAR21BELTk5PVxweT2Jxs98gWC'
-const VIDEO_PRICE_LAMPORTS = 0.01 * LAMPORTS_PER_SOL // $20 USDC equivalent in SOL
+const VIDEO_PRICE_LAMPORTS = 0.0015 * LAMPORTS_PER_SOL // $3 USDC equivalent in SOL
 
 type Tab = 'humans' | 'agents'
 
@@ -205,9 +205,9 @@ export default function Home() {
                   <div className="bg-purple-950/30 border border-purple-600/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-purple-200">Single Video</span>
-                      <span className="text-2xl font-bold text-green-400">$20</span>
+                      <span className="text-2xl font-bold text-green-400">$3</span>
                     </div>
-                    <p className="text-sm text-purple-400">Pay with SOL on Solana (0.01 SOL ≈ $20)</p>
+                    <p className="text-sm text-purple-400">Pay with SOL on Solana (0.0015 SOL ≈ $3)</p>
                   </div>
                   
                   {status && (
@@ -243,7 +243,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold mb-4 text-green-400">Quick Start</h3>
                 <div className="bg-black/50 border border-purple-600 rounded-lg p-4 font-mono text-sm overflow-x-auto">
                   <pre className="text-purple-200">
-{`# 1. Pay 0.01 SOL to: ${PAYMENT_RECIPIENT}
+{`# 1. Pay 0.0015 SOL to: ${PAYMENT_RECIPIENT}
 # 2. Get transaction signature
 # 3. Call API with GitHub URL + signature
 
@@ -306,7 +306,7 @@ curl -X POST ${API_ENDPOINT}/generate \\
 // 1. Send payment
 const tx = await Bankr.transfer({
   to: '${PAYMENT_RECIPIENT}',
-  amount: '0.01 SOL'
+  amount: '0.0015 SOL'
 });
 
 // 2. Generate video
@@ -344,7 +344,7 @@ while (true) {
                 <div className="space-y-2 text-purple-200">
                   <div className="flex justify-between">
                     <span>Single video</span>
-                    <span className="font-bold text-green-400">0.01 SOL (~$20)</span>
+                    <span className="font-bold text-green-400">0.0015 SOL (~$3)</span>
                   </div>
                   <div className="flex justify-between text-sm text-purple-400">
                     <span>Payment wallet</span>
@@ -400,7 +400,7 @@ while (true) {
           <div className="bg-purple-900/40 border border-purple-600 rounded-xl p-6">
             <div className="text-4xl mb-4">💰</div>
             <h3 className="text-xl font-bold mb-2">Pay Per Video</h3>
-            <p className="text-purple-300">$20 per video. No subscriptions required.</p>
+            <p className="text-purple-300">$3 per video. No subscriptions required.</p>
           </div>
         </div>
 
