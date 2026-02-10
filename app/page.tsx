@@ -126,9 +126,6 @@ export default function Home() {
             <span className="px-4 py-1.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-bold rounded-full solana-glow-green">
               🤖 Fully Automated
             </span>
-            <span className="px-4 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-bold rounded-full">
-              🆓 $0 API Costs
-            </span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-violet-400 to-purple-300 bg-clip-text text-transparent">
@@ -210,12 +207,7 @@ export default function Home() {
                       <span className="text-purple-200">Single Video</span>
                       <span className="text-2xl font-bold text-green-400">$20</span>
                     </div>
-                    <p className="text-sm text-purple-400 mb-2">Pay with SOL on Solana (0.01 SOL ≈ $20)</p>
-                    <div className="flex items-center gap-2 text-xs text-green-400">
-                      <span>🆓 Powered by free AI tools</span>
-                      <span className="text-purple-600">•</span>
-                      <span>Sustainable pricing</span>
-                    </div>
+                    <p className="text-sm text-purple-400">Pay with SOL on Solana (0.01 SOL ≈ $20)</p>
                   </div>
                   
                   {status && (
@@ -349,24 +341,10 @@ while (true) {
               {/* Pricing */}
               <div className="bg-purple-950/50 border border-purple-500 rounded-lg p-6">
                 <h3 className="text-xl font-bold mb-4">Pricing</h3>
-                <div className="space-y-3 text-purple-200">
-                  <div className="flex justify-between items-center">
+                <div className="space-y-2 text-purple-200">
+                  <div className="flex justify-between">
                     <span>Single video</span>
                     <span className="font-bold text-green-400">0.01 SOL (~$20)</span>
-                  </div>
-                  <div className="bg-purple-900/30 border border-purple-600/30 rounded p-3 text-xs space-y-1">
-                    <div className="flex justify-between text-green-400">
-                      <span>🧠 Script generation</span>
-                      <span>Qwen3 (local) - $0</span>
-                    </div>
-                    <div className="flex justify-between text-green-400">
-                      <span>🎙️ Voiceover</span>
-                      <span>gTTS (free) - $0</span>
-                    </div>
-                    <div className="flex justify-between text-purple-400 pt-2 border-t border-purple-700">
-                      <span>Total backend cost</span>
-                      <span className="font-bold">$0/video</span>
-                    </div>
                   </div>
                   <div className="flex justify-between text-sm text-purple-400">
                     <span>Payment wallet</span>
@@ -385,8 +363,8 @@ while (true) {
                 
                 <div className="bg-purple-950/30 border border-purple-600 rounded-lg p-4">
                   <div className="text-2xl mb-2">🎙️</div>
-                  <h4 className="font-bold mb-1">AI Voiceover</h4>
-                  <p className="text-sm text-purple-300">gTTS synthesis • $0 API costs</p>
+                  <h4 className="font-bold mb-1">Professional Voiceover</h4>
+                  <p className="text-sm text-purple-300">AI-generated voice narration</p>
                 </div>
                 
                 <div className="bg-purple-950/30 border border-purple-600 rounded-lg p-4">
@@ -421,8 +399,8 @@ while (true) {
           
           <div className="bg-purple-900/40 border border-purple-600 rounded-xl p-6">
             <div className="text-4xl mb-4">💰</div>
-            <h3 className="text-xl font-bold mb-2">Sustainable Pricing</h3>
-            <p className="text-purple-300">$20 per video. Powered by free AI tools (Qwen3 + gTTS). No API costs.</p>
+            <h3 className="text-xl font-bold mb-2">Pay Per Video</h3>
+            <p className="text-purple-300">$20 per video. No subscriptions required.</p>
           </div>
         </div>
 
