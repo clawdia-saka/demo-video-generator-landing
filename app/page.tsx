@@ -42,6 +42,40 @@ export default function Home() {
     }
   }
 
+  const handleFreeSample = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    setLoading(true)
+    setStatus('🎬 Generating free 5-second sample...')
+    
+    try {
+      const response = await fetch(`${API_ENDPOINT}/generate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          githubUrl,
+          isFree: true,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Video generation failed')
+      }
+
+      const data = await response.json()
+      setStatus(`🎉 Free sample started! Job ID: ${data.jobId}`)
+      alert(`Generating 5-second preview. Check status: ${API_ENDPOINT}/status/${data.jobId}`)
+      
+    } catch (err) {
+      console.error('Error:', err)
+      setStatus(`❌ Error: ${(err as Error).message}`)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
@@ -216,12 +250,24 @@ export default function Home() {
                     </div>
                   )}
                   
+                  {/* Free Sample Button */}
+                  <button
+                    onClick={handleFreeSample}
+                    disabled={loading || !githubUrl}
+                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold py-4 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loading ? '⏳ Processing...' : '🎬 Try Free Sample (5 sec) →'}
+                  </button>
+                  
+                  <div className="text-center text-sm text-purple-400">or</div>
+                  
+                  {/* Paid Full Version Button */}
                   <button
                     type="submit"
                     disabled={loading || !githubUrl || !walletAddress}
                     className="w-full bg-gradient-to-r from-purple-600 via-violet-600 to-purple-700 hover:from-purple-700 hover:via-violet-700 hover:to-purple-800 text-white font-bold py-4 rounded-lg solana-glow transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {loading ? '⏳ Processing...' : '🎬 Generate Demo Video →'}
+                    {loading ? '⏳ Processing...' : '💰 Generate Full Video ($3) →'}
                   </button>
                 </form>
               </div>
