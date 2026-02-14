@@ -162,8 +162,8 @@ export default function Home() {
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-violet-400 to-purple-300 bg-clip-text text-transparent">
-            Demo Videos<br />in Minutes, Not Days
+          <h1 className="text-6xl md:text-9xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-300 bg-clip-text text-transparent leading-tight">
+            Demo Videos<br />in Minutes
           </h1>
           
           <p className="text-xl md:text-2xl text-purple-200 max-w-3xl mx-auto mb-8">
@@ -429,24 +429,50 @@ while (true) {
           </div>
         )}
 
-        {/* Features Grid - Show on both tabs */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-purple-900/40 border border-purple-600 rounded-xl p-6">
-            <div className="text-4xl mb-4">⚡</div>
-            <h3 className="text-xl font-bold mb-2">Lightning Fast</h3>
-            <p className="text-purple-300">5-minute turnaround from GitHub URL to finished video</p>
+        {/* Bento Grid Features - Premium Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-16">
+          {/* Large card - Lightning Fast */}
+          <div className="md:col-span-2 md:row-span-2 bg-gradient-to-br from-purple-900/60 via-purple-900/40 to-transparent backdrop-blur-xl border border-purple-500/50 rounded-2xl p-8 relative overflow-hidden group hover:border-purple-400 transition-all">
+            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
+            <div className="relative z-10">
+              <div className="text-6xl mb-4">⚡</div>
+              <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Lightning Fast</h3>
+              <p className="text-lg text-purple-200">5-minute turnaround from GitHub URL to finished video. Perfect for hackathons and demos.</p>
+              <div className="mt-6 flex items-center gap-2 text-sm text-purple-300">
+                <span className="px-3 py-1 bg-purple-800/50 rounded-full">5 min avg</span>
+                <span className="px-3 py-1 bg-purple-800/50 rounded-full">1080p quality</span>
+              </div>
+            </div>
           </div>
           
-          <div className="bg-purple-900/40 border border-purple-600 rounded-xl p-6">
-            <div className="text-4xl mb-4">🤖</div>
-            <h3 className="text-xl font-bold mb-2">Fully Automated</h3>
-            <p className="text-purple-300">AI analyzes your repo, writes script, records demo</p>
+          {/* Medium card - Fully Automated */}
+          <div className="md:col-span-2 bg-gradient-to-br from-green-900/60 via-emerald-900/40 to-transparent backdrop-blur-xl border border-green-500/50 rounded-2xl p-6 relative overflow-hidden hover:border-green-400 transition-all">
+            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
+            <div className="relative z-10">
+              <div className="text-5xl mb-3">🤖</div>
+              <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-white to-green-200 bg-clip-text text-transparent">Fully Automated</h3>
+              <p className="text-purple-200">AI analyzes your repo, writes script, records demo</p>
+            </div>
           </div>
           
-          <div className="bg-purple-900/40 border border-purple-600 rounded-xl p-6">
-            <div className="text-4xl mb-4">💰</div>
-            <h3 className="text-xl font-bold mb-2">Pay Per Video</h3>
-            <p className="text-purple-300">$3 per video. No subscriptions required.</p>
+          {/* Small card - Pay Per Video */}
+          <div className="md:col-span-2 bg-gradient-to-br from-violet-900/60 via-purple-900/40 to-transparent backdrop-blur-xl border border-violet-500/50 rounded-2xl p-6 relative overflow-hidden hover:border-violet-400 transition-all">
+            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
+            <div className="relative z-10">
+              <div className="text-5xl mb-3">💰</div>
+              <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-white to-violet-200 bg-clip-text text-transparent">Pay Per Video</h3>
+              <p className="text-purple-200">$3 per video. No subscriptions, no recurring fees.</p>
+            </div>
+          </div>
+          
+          {/* Small card - Professional Quality */}
+          <div className="md:col-span-2 bg-gradient-to-br from-cyan-900/60 via-blue-900/40 to-transparent backdrop-blur-xl border border-cyan-500/50 rounded-2xl p-6 relative overflow-hidden hover:border-cyan-400 transition-all">
+            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
+            <div className="relative z-10">
+              <div className="text-5xl mb-3">🎙️</div>
+              <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">Pro Voiceover</h3>
+              <p className="text-purple-200">AI-generated voice narration with professional quality</p>
+            </div>
           </div>
         </div>
 
